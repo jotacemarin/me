@@ -38,7 +38,7 @@ export default {
         home: routes[profile].path,
         pages : [
             ...routes[profile].children
-                .filter(({ name }) => !!name)
+                .filter(({ name }) => !!name && !name.includes('awards'))
                 .map(({ name, path }) => ({ title: name.replace('profile-', ''), path })),
         ],
     }),
